@@ -1,13 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  experimental: {
-    agentFeedback: true,
-  },
-  cacheComponents: true,
-  partialPrefetching: true,
-  reactCompiler: true,
   turbopack: {
     rules: {
       "*.css": {
@@ -15,6 +8,30 @@ const nextConfig: NextConfig = {
         as: "*.css",
       },
     },
+  },
+  webpack: (config) => {
+    const oneOfRule = config.module?.rules?.find(
+      (rule: { oneOf?: unknown[] }) => Array.isArray(rule?.oneOf)
+    );
+    if (oneOfRule && Array.isArray(oneOfRule.oneOf)) {
+      for (const rule of oneOfRule.oneOf) {
+        if (rule.use && Array.isArray(rule.use)) {
+          const hasCssLoader = rule.use.some(
+            (u: { loader?: string } | string) => {
+              const loaderStr = typeof u === "string" ? u : u?.loader ?? "";
+              return (
+                loaderStr.includes("css-loader") &&
+                !loaderStr.includes("error-loader")
+              );
+            }
+          );
+          if (hasCssLoader) {
+            rule.use.push(require.resolve("@tailwindcss/turbopack"));
+          }
+        }
+      }
+    }
+    return config;
   },
 };
 
