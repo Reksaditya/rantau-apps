@@ -67,7 +67,7 @@ export default async function ConsultationsListPage() {
       {bookings.length === 0 ? (
         <EmptyState
           title="Belum Ada Jadwal Konsultasi Mentor"
-          description="Pilih mentor sesuai bidang industri usaha Anda pada Direktori Mentor dan pesan slot waktu yang tersedia (Khusus pelanggan Rantau Max)."
+          description="Pilih mentor sesuai bidang industri usaha Anda pada Direktori Mentor dan pesan slot waktu yang tersedia (Khusus pelanggan Rintis Max)."
           actionLabel="Buka Direktori Mentor"
           actionHref="/mentors"
         />

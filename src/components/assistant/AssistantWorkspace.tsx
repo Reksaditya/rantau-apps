@@ -91,13 +91,13 @@ export function AssistantWorkspace({
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-2xl text-sm text-[#172B25]">
           <div className="rounded-lg border border-[#B7DCCF] bg-[#FFFFFF] p-3.5">
             <strong className="block font-semibold text-[#1B8366]">
-              Rantau Growth
+              Rintis Growth
             </strong>
             <span>30 pesan kontekstual per hari + 12 komponen roadmap</span>
           </div>
           <div className="rounded-lg border border-[#B7DCCF] bg-[#FFFFFF] p-3.5">
             <strong className="block font-semibold text-[#1B8366]">
-              Rantau Max
+              Rintis Max
             </strong>
             <span>100 pesan per hari + Booking Konsultasi Mentor 1-on-1</span>
           </div>

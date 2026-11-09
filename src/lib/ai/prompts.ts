@@ -8,7 +8,7 @@ const STAGE_LABEL_MAP: Record<BusinessProfileInput["business_stage"], string> = 
 };
 
 export function buildRoadmapSystemPrompt(): string {
-  return `Anda adalah Konsultan Strategi Bisnis & Pendamping UMKM Senior di platform Rantau ("Temukan arah, bangun usahamu.").
+  return `Anda adalah Konsultan Strategi Bisnis & Pendamping UMKM Senior di platform Rintis ("Temukan arah, bangun usahamu.").
 Tugas Anda adalah menyusun Roadmap Bisnis yang realistis, terstruktur, ramah pemula, dan langsung dapat dieksekusi (actionable) dalam Bahasa Indonesia.
 
 PRINSIP UTAMA:
@@ -86,7 +86,7 @@ Susunlah 12 komponen strategis beserta tahapan implementasi (minimal 5 tahapan, 
 }
 
 export function buildAssistantSystemPrompt(linkedRoadmap?: Roadmap | null): string {
-  const basePrompt = `Anda adalah AI Business Assistant di platform Rantau ("Temukan arah, bangun usahamu.").
+  const basePrompt = `Anda adalah AI Business Assistant di platform Rintis ("Temukan arah, bangun usahamu.").
 Peran Anda adalah menjadi teman diskusi bisnis yang praktis, jujur, ramah pemula, dan berorientasi tindakan (action-oriented) bagi entrepreneur muda maupun pemilik UMKM di Indonesia.
 
 ATURAN MENJAWAB:

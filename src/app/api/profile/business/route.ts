@@ -61,7 +61,7 @@ export async function POST(request: Request) {
           input.full_name ||
           (user.user_metadata?.full_name as string) ||
           user.email?.split("@")[0] ||
-          "Entrepreneur Rantau",
+          "Entrepreneur Rintis",
         email: user.email || "",
         onboarding_completed: true,
         updated_at: nowIso,

@@ -20,7 +20,7 @@ export interface PlanEntitlement {
 export const PLAN_ENTITLEMENTS: Record<PlanTier, PlanEntitlement> = {
   starter: {
     tier: "starter",
-    name: "Rantau Starter",
+    name: "Rintis Starter",
     tagline: "Eksplorasi ide bisnis awal dan uji kelayakan usaha pertama Anda.",
     priceLabel: "Rp0",
     priceNote: "per bulan • Gratis selamanya",
@@ -40,7 +40,7 @@ export const PLAN_ENTITLEMENTS: Record<PlanTier, PlanEntitlement> = {
   },
   growth: {
     tier: "growth",
-    name: "Rantau Growth",
+    name: "Rintis Growth",
     tagline: "Perencanaan strategis penuh & pendampingan AI harian untuk merintis usaha.",
     priceLabel: "Rp99.000",
     priceNote: "per bulan • Harga Placeholder MVP",
@@ -61,7 +61,7 @@ export const PLAN_ENTITLEMENTS: Record<PlanTier, PlanEntitlement> = {
   },
   max: {
     tier: "max",
-    name: "Rantau Max",
+    name: "Rintis Max",
     tagline: "Pendampingan komprehensif bersama AI kapasitas penuh dan mentor 1-on-1.",
     priceLabel: "Rp299.000",
     priceNote: "per bulan • Harga Placeholder MVP",

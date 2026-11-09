@@ -36,7 +36,7 @@ export default async function SubscriptionSettingsPage() {
           Langganan & Kuota Harian
         </h1>
         <p className="mt-1 text-sm sm:text-base text-[#52645D]">
-          Kelola paket langganan Rantau Anda dan pantau sisa kuota harian fitur
+          Kelola paket langganan Rintis Anda dan pantau sisa kuota harian fitur
           AI.
         </p>
       </div>

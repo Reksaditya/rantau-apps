@@ -52,7 +52,7 @@ export async function POST(
       return NextResponse.json(
         {
           error:
-            "Paket Rantau Starter memiliki akses Read-only pada forum. Tingkatkan ke Rantau Growth atau Max untuk berdiskusi dan mengirim komentar.",
+            "Paket Rintis Starter memiliki akses Read-only pada forum. Tingkatkan ke Rintis Growth atau Max untuk berdiskusi dan mengirim komentar.",
         },
         { status: 403 }
       );

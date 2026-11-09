@@ -1,8 +1,8 @@
-# Rantau — AI-Powered Business Companion Platform
+# Rintis — AI-Powered Business Companion Platform
 
 > **"Temukan arah, bangun usahamu."**
 
-**Rantau** adalah aplikasi web *full-stack* SaaS pendamping bisnis berbasis AI yang membantu anak muda dan calon entrepreneur memulai usaha dari nol, sekaligus membantu pemilik UMKM yang sudah berjalan mengatasi stagnasi penjualan melalui kombinasi **AI Business Roadmap**, **AI Business Assistant**, **Community Forum**, dan **Mentor Consultation**.
+**Rintis** adalah aplikasi web *full-stack* SaaS pendamping bisnis berbasis AI yang membantu anak muda dan calon entrepreneur memulai usaha dari nol, sekaligus membantu pemilik UMKM yang sudah berjalan mengatasi stagnasi penjualan melalui kombinasi **AI Business Roadmap**, **AI Business Assistant**, **Community Forum**, dan **Mentor Consultation**.
 
 ---
 
@@ -10,7 +10,7 @@
 
 1. **Autentikasi & Profil Bisnis (`Supabase Auth` & `PostgreSQL`):**
    - Registrasi, login, logout, dan proteksi rute menggunakan middleware `@supabase/ssr`.
-   - Trigger otomatis pembuatan `profiles` dan `subscriptions` (`Rantau Starter`).
+   - Trigger otomatis pembuatan `profiles` dan `subscriptions` (`Rintis Starter`).
    - Pengelolaan konteks usaha (`not_started`, `starting`, `running`).
 2. **AI Business Roadmap Generator (`Google Gemini API` + `Zod`):**
    - Formulir *multi-step* adaptif sesuai kondisi bisnis.
@@ -25,7 +25,7 @@
 6. **Community Forum:**
    - Diskusi terkurasi dalam 5 kategori bisnis, pencarian kata kunci, komentar, *upvote*, serta proteksi kepemilikan konten (IDOR & RLS).
 7. **Direktori Mentor & Booking Konsultasi 1-on-1:**
-   - Direktori mentor dengan penanda `Data Demo MVP`, pemilihan slot jadwal tersedia, dan pencegahan *double booking* (`409 Conflict`) khusus pelanggan **Rantau Max**.
+   - Direktori mentor dengan penanda `Data Demo MVP`, pemilihan slot jadwal tersedia, dan pencegahan *double booking* (`409 Conflict`) khusus pelanggan **Rintis Max**.
 
 ---
 

@@ -1,10 +1,10 @@
 # Product Requirements Document (PRD)
 
-## Rantau — AI-Powered Business Companion Platform
+## Rintis — AI-Powered Business Companion Platform
 
 | Informasi | Keterangan |
 | --- | --- |
-| Nama proyek | Rantau |
+| Nama proyek | Rintis |
 | Tagline | Temukan arah, bangun usahamu. |
 | Jenis proyek | Aplikasi web full-stack SaaS pendamping bisnis berbasis AI, komunitas, dan konsultasi mentor |
 | Platform | Browser Desktop, Tablet, dan Mobile (Responsif) |
@@ -18,12 +18,12 @@
 ## 1. Product Overview & Problem Statement
 
 ### 1.1 Konsep Produk
-**Rantau** adalah platform pendamping bisnis berbasis AI yang membantu anak muda dan calon entrepreneur memulai bisnis dari nol, sekaligus membantu pemilik bisnis yang sudah berjalan tetapi mengalami kesulitan dalam mendapatkan pelanggan, meningkatkan penjualan, atau mengembangkan usahanya.
+**Rintis** adalah platform pendamping bisnis berbasis AI yang membantu anak muda dan calon entrepreneur memulai bisnis dari nol, sekaligus membantu pemilik bisnis yang sudah berjalan tetapi mengalami kesulitan dalam mendapatkan pelanggan, meningkatkan penjualan, atau mengembangkan usahanya.
 
 **Core Value Proposition:**
 > *"Ubah ide bisnis menjadi langkah nyata, dari perencanaan hingga pengembangan."*
 
-Rantau bukan sekadar generator ide bisnis. Platform ini dirancang untuk membantu pengguna memahami **apa** yang perlu dilakukan, **mengapa** langkah tersebut penting, dan **bagaimana** memulainya secara bertahap melalui kombinasi roadmap bisnis terstruktur, asisten AI kontekstual, forum diskusi komunitas, dan konsultasi bersama mentor.
+Rintis bukan sekadar generator ide bisnis. Platform ini dirancang untuk membantu pengguna memahami **apa** yang perlu dilakukan, **mengapa** langkah tersebut penting, dan **bagaimana** memulainya secara bertahap melalui kombinasi roadmap bisnis terstruktur, asisten AI kontekstual, forum diskusi komunitas, dan konsultasi bersama mentor.
 
 ### 1.2 Pernyataan Masalah (Problem Statement)
 1. **Kebingungan Memulai dari Nol:** Banyak calon entrepreneur memiliki ide bisnis, namun tidak mengetahui langkah konkret pertama yang harus diambil terkait validasi pasar, perhitungan modal awal, operasional dasar, dan akuisisi pelanggan pertama.
@@ -52,9 +52,9 @@ Rantau bukan sekadar generator ide bisnis. Platform ini dirancang untuk membantu
 
 | Persona | Profil & Latar Belakang | Tujuan (Goals) | Kendala Utama (Pain Points) | Paket yang Sesuai |
 | --- | --- | --- | --- | --- |
-| **Raka (21 Tahun, Mahasiswa / Calon Entrepreneur)** | Ingin memulai usaha kuliner/minuman dengan modal tabungan terbatas, belum pernah berbisnis sebelumnya. | Memvalidasi apakah idenya layak dijual dan mengetahui rincian langkah persiapan hingga peluncuran. | Bingung cara menghitung modal awal, takut rugi di awal, dan tidak tahu cara mencari 10 pembeli pertama. | **Rantau Starter** / **Rantau Growth** |
-| **Nadya (25 Tahun, Pekerja Muda / Perintis Brand)** | Sedang merintis usaha produk kreatif secara sampingan selama 3 bulan terakhir. | Menyusun strategi promosi yang konsisten dan menanyakan kendala harga jual ke asisten AI kapan saja. | Penjualan masih mengandalkan teman dekat, bingung menyusun prioritas kerja mingguan dan strategi konten. | **Rantau Growth** |
-| **Hendra (32 Tahun, Pemilik UMKM Berjalan)** | Memiliki usaha jasa/retail lokal yang sudah berjalan lebih dari 1 tahun dengan 2 staf. | Mengatasi omzet yang stagnan, memperbaiki retensi pelanggan, dan berkonsultasi langsung dengan mentor. | Sulit mendiagnosis mengapa pelanggan jarang membeli ulang dan butuh teman diskusi berpengalaman. | **Rantau Max** |
+| **Raka (21 Tahun, Mahasiswa / Calon Entrepreneur)** | Ingin memulai usaha kuliner/minuman dengan modal tabungan terbatas, belum pernah berbisnis sebelumnya. | Memvalidasi apakah idenya layak dijual dan mengetahui rincian langkah persiapan hingga peluncuran. | Bingung cara menghitung modal awal, takut rugi di awal, dan tidak tahu cara mencari 10 pembeli pertama. | **Rintis Starter** / **Rintis Growth** |
+| **Nadya (25 Tahun, Pekerja Muda / Perintis Brand)** | Sedang merintis usaha produk kreatif secara sampingan selama 3 bulan terakhir. | Menyusun strategi promosi yang konsisten dan menanyakan kendala harga jual ke asisten AI kapan saja. | Penjualan masih mengandalkan teman dekat, bingung menyusun prioritas kerja mingguan dan strategi konten. | **Rintis Growth** |
+| **Hendra (32 Tahun, Pemilik UMKM Berjalan)** | Memiliki usaha jasa/retail lokal yang sudah berjalan lebih dari 1 tahun dengan 2 staf. | Mengatasi omzet yang stagnan, memperbaiki retensi pelanggan, dan berkonsultasi langsung dengan mentor. | Sulit mendiagnosis mengapa pelanggan jarang membeli ulang dan butuh teman diskusi berpengalaman. | **Rintis Max** |
 
 ---
 
@@ -64,7 +64,7 @@ Rantau bukan sekadar generator ide bisnis. Platform ini dirancang untuk membantu
 1. Menyediakan alur autentikasi dan penyimpanan profil bisnis pengguna secara aman menggunakan Supabase Auth dan PostgreSQL.
 2. Menghasilkan **AI Business Roadmap** yang adaptif (menyesuaikan kondisi bisnis: *belum dimulai*, *sedang dirintis*, atau *sudah berjalan*) menggunakan Google Gemini API dengan validasi skema JSON ketat.
 3. Menyediakan visualisasi roadmap dalam bentuk tahapan (*stepper/timeline*) dan manajemen status *task* yang menyimpan persentase progres ke database.
-4. Menerapkan sistem tiga paket langganan (**Rantau Starter**, **Rantau Growth**, **Rantau Max**) dengan pembatasan hak akses (*entitlement*) dan kuota harian di sisi server.
+4. Menerapkan sistem tiga paket langganan (**Rintis Starter**, **Rintis Growth**, **Rintis Max**) dengan pembatasan hak akses (*entitlement*) dan kuota harian di sisi server.
 5. Menyediakan **AI Business Assistant** yang terhubung dengan konteks roadmap pengguna beserta penyimpanan riwayat percakapan.
 6. Menyediakan **Community Forum** untuk berdiskusi berdasarkan kategori bisnis dengan proteksi kepemilikan konten.
 7. Menyediakan fitur **Mentor Consultation** untuk melihat direktori mentor dan memesan jadwal sesi 1-on-1 dengan pencegahan *double booking*.
@@ -73,7 +73,7 @@ Rantau bukan sekadar generator ide bisnis. Platform ini dirancang untuk membantu
 - **Payment Gateway Otomatis (Future Scope):** MVP tidak mengintegrasikan pembayaran kartu kredit/e-wallet otomatis. Aktivasi paket dikelola melalui mekanisme server-side MVP yang aman.
 - **Built-in Video Call & Kalender Eksternal (Future Scope):** MVP tidak menyediakan ruang panggilan video di dalam browser atau sinkronisasi dua arah otomatis ke Google Calendar/Zoom API.
 - **Real-time Chat Antar Pengguna & Gamifikasi Forum (Future Scope):** Forum fokus pada diskusi terstruktur (postingan, komentar, *upvote*, kategori) tanpa *direct message* *real-time* atau sistem lencana reputasi kompleks.
-- **Integrasi Pembukuan Akuntansi / POS (Future Scope):** Rantau fokus pada perencanaan strategis, pemasaran, operasional dasar, dan pendampingan eksekusi.
+- **Integrasi Pembukuan Akuntansi / POS (Future Scope):** Rintis fokus pada perencanaan strategis, pemasaran, operasional dasar, dan pendampingan eksekusi.
 
 ---
 
@@ -81,13 +81,13 @@ Rantau bukan sekadar generator ide bisnis. Platform ini dirancang untuk membantu
 
 | ID | User Story | Kriteria Penerimaan (Acceptance Criteria) |
 | --- | --- | --- |
-| **US-01** | Sebagai pengunjung, saya ingin memahami manfaat Rantau dan perbedaan paket langganannya sebelum mendaftar. | 1. Landing page menampilkan masalah, solusi, cara kerja, fitur utama, dan paket langganan.<br>2. Halaman `/pricing` menampilkan perbandingan jelas antara Starter, Growth, dan Max beserta keterangan harga placeholder MVP. |
+| **US-01** | Sebagai pengunjung, saya ingin memahami manfaat Rintis dan perbedaan paket langganannya sebelum mendaftar. | 1. Landing page menampilkan masalah, solusi, cara kerja, fitur utama, dan paket langganan.<br>2. Halaman `/pricing` menampilkan perbandingan jelas antara Starter, Growth, dan Max beserta keterangan harga placeholder MVP. |
 | **US-02** | Sebagai pengguna baru, saya ingin membuat akun, masuk, dan mengisi profil kondisi bisnis saya. | 1. Registrasi dan login via Supabase Auth berhasil membuat sesi serta profil default (`starter`).<br>2. Pengguna dapat menyimpan dan memperbarui data profil bisnis di database. |
 | **US-03** | Sebagai entrepreneur, saya ingin memasukkan ide atau kondisi usaha saya agar AI membuatkan roadmap bisnis yang terstruktur. | 1. Form input menyesuaikan pertanyaan dengan tahap bisnis (`not_started`, `starting`, `running`).<br>2. Server memeriksa sisa kuota harian sebelum memanggil Gemini API.<br>3. Output AI tervalidasi mencakup 12 komponen wajib dan disimpan sebagai versi roadmap baru tanpa menimpa roadmap lama. |
 | **US-04** | Sebagai pengguna, saya ingin menandai status setiap tugas pada roadmap agar saya mengetahui progres eksekusi bisnis saya. | 1. Pengguna dapat mengubah status task menjadi `not_started`, `in_progress`, atau `completed`.<br>2. Persentase progres roadmap dihitung ulang di server dan disimpan ke database. |
 | **US-05** | Sebagai pengguna Growth/Max, saya ingin berdiskusi dengan AI Business Assistant yang memahami roadmap bisnis saya. | 1. Pengguna Starter melihat informasi *upgrade* saat mengakses halaman Assistant.<br>2. Pengguna Growth/Max dapat memilih roadmap sebagai konteks, mengirim pertanyaan, melihat riwayat pesan, dan kuota hariannya tercatat di database. |
 | **US-06** | Sebagai anggota komunitas, saya ingin membaca, mencari, membuat, serta mengomentari diskusi bisnis di forum. | 1. Daftar diskusi dapat difilter berdasarkan kategori dan kata kunci pencarian.<br>2. Pengguna hanya dapat mengedit atau menghapus postingan/komentar miliknya sendiri (ditegakkan di server dan RLS). |
-| **US-07** | Sebagai pengguna Rantau Max, saya ingin memilih mentor dan memesan jadwal konsultasi 1-on-1 yang tersedia. | 1. Direktori mentor menampilkan keahlian, pengalaman, durasi sesi, dan label jelas apabila merupakan data demo.<br>2. Hanya pengguna Max yang dapat melakukan *booking*.<br>3. Server dan database menolak *double booking* pada slot jadwal yang sama. |
+| **US-07** | Sebagai pengguna Rintis Max, saya ingin memilih mentor dan memesan jadwal konsultasi 1-on-1 yang tersedia. | 1. Direktori mentor menampilkan keahlian, pengalaman, durasi sesi, dan label jelas apabila merupakan data demo.<br>2. Hanya pengguna Max yang dapat melakukan *booking*.<br>3. Server dan database menolak *double booking* pada slot jadwal yang sama. |
 
 ---
 
@@ -130,7 +130,7 @@ Rantau bukan sekadar generator ide bisnis. Platform ini dirancang untuk membantu
 - Menyediakan mekanisme perubahan paket MVP yang divalidasi di sisi server (dengan keterangan transparan bahwa pembayaran online belum diaktifkan pada tahap MVP).
 
 ### FR-06 — AI Business Assistant
-- Tersedia khusus untuk paket **Rantau Growth** dan **Rantau Max**.
+- Tersedia khusus untuk paket **Rintis Growth** dan **Rintis Max**.
 - Mendukung penautan percakapan ke salah satu roadmap milik pengguna agar jawaban AI relevan dengan tahap bisnis, modal, dan kendala pengguna.
 - Menyimpan daftar sesi percakapan (`ai_conversations`) dan riwayat pesan (`ai_messages`) di database.
 - Menyediakan indikator *loading*, *error state*, dan tombol *retry* apabila pemanggilan AI mengalami kendala.
@@ -142,7 +142,7 @@ Rantau bukan sekadar generator ide bisnis. Platform ini dirancang untuk membantu
 ### FR-08 — Direktori Mentor & Booking Konsultasi
 - Menampilkan direktori mentor beserta foto/inisial, bidang keahlian, ringkasan pengalaman, bahasa konsultasi, durasi sesi, dan daftar slot jadwal yang tersedia.
 - Memberikan badge penanda yang jelas (`Data Demo MVP`) pada profil mentor simulasi.
-- Mengizinkan pengguna **Rantau Max** memesan jadwal yang tersedia, melihat daftar *booking* miliknya (`/consultations`), serta memperbarui status *booking* (`completed` atau `cancelled`) sesuai aturan.
+- Mengizinkan pengguna **Rintis Max** memesan jadwal yang tersedia, melihat daftar *booking* miliknya (`/consultations`), serta memperbarui status *booking* (`completed` atau `cancelled`) sesuai aturan.
 
 ---
 
@@ -159,7 +159,7 @@ Rantau bukan sekadar generator ide bisnis. Platform ini dirancang untuk membantu
 
 ### 7.1 Halaman Publik (Public Pages)
 1. `/` — **Landing Page:** Hero, masalah yang diselesaikan, cara kerja 4 langkah, sorotan fitur utama, ringkasan paket langganan, dan CTA.
-2. `/pricing` — **Pricing Page:** Tabel dan kartu perbandingan detail paket Rantau Starter, Growth, dan Max beserta FAQ singkat.
+2. `/pricing` — **Pricing Page:** Tabel dan kartu perbandingan detail paket Rintis Starter, Growth, dan Max beserta FAQ singkat.
 3. `/login` — **Login Page:** Formulir masuk dengan email & kata sandi.
 4. `/register` — **Register Page:** Formulir pendaftaran akun baru.
 
@@ -201,7 +201,7 @@ Rantau bukan sekadar generator ide bisnis. Platform ini dirancang untuk membantu
 
 ### 9.1 Matriks Entitlement Paket Langganan
 
-| Atribut / Hak Akses | Rantau Starter (`starter`) | Rantau Growth (`growth`) | Rantau Max (`max`) |
+| Atribut / Hak Akses | Rintis Starter (`starter`) | Rintis Growth (`growth`) | Rintis Max (`max`) |
 | --- | --- | --- | --- |
 | **Target Pengguna** | Eksplorasi ide bisnis awal | Perencanaan & pengembangan usaha mendalam | Pendampingan bisnis komprehensif bersama AI & Mentor |
 | **Harga (Placeholder MVP)** | Rp0 / bulan | Rp99.000 / bulan *(Placeholder)* | Rp299.000 / bulan *(Placeholder)* |

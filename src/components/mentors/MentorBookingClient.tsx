@@ -215,7 +215,7 @@ export function MentorBookingClient({
           })}
         </div>
 
-        {/* Gate Entitlement Paket Rantau Max */}
+        {/* Gate Entitlement Paket Rintis Max */}
         {!entitlement.canBookMentor ? (
           <div className="rounded-xl border border-[#B7DCCF] bg-[#E8F4F0] p-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start gap-3">
@@ -224,14 +224,14 @@ export function MentorBookingClient({
               </span>
               <div>
                 <h3 className="font-heading text-base font-bold text-[#172B25]">
-                  Pemesanan Sesi Mentor Tersedia untuk Paket Rantau Max
+                  Pemesanan Sesi Mentor Tersedia untuk Paket Rintis Max
                 </h3>
                 <p className="mt-0.5 text-xs sm:text-sm text-[#52645D]">
                   Paket aktif Anda saat ini adalah{" "}
                   <strong className="font-semibold text-[#172B25]">
                     {entitlement.name}
                   </strong>
-                  . Beralih ke paket Rantau Max pada menu Langganan untuk
+                  . Beralih ke paket Rintis Max pada menu Langganan untuk
                   memesan jadwal konsultasi 1-on-1 bersama mentor.
                 </p>
               </div>
@@ -241,7 +241,7 @@ export function MentorBookingClient({
               href="/settings/subscription"
               className="inline-flex items-center justify-center rounded-lg bg-[#1B8366] px-4 py-2.5 text-xs sm:text-sm font-semibold text-[#FFFFFF] hover:bg-[#166B53] shrink-0 self-start sm:self-center"
             >
-              Aktifkan Rantau Max
+              Aktifkan Rintis Max
             </Link>
           </div>
         ) : (

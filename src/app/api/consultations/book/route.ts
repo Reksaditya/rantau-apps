@@ -44,7 +44,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // Langkah 3: Verifikasi entitlement paket langganan (Hanya Rantau Max)
+    // Langkah 3: Verifikasi entitlement paket langganan (Hanya Rintis Max)
     const planTier = await getUserPlanTier(supabase, user.id);
     const entitlement = PLAN_ENTITLEMENTS[planTier];
 
@@ -52,7 +52,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           error:
-            "Pemesanan sesi konsultasi 1-on-1 bersama Mentor tersedia khusus untuk pelanggan paket Rantau Max. Silakan tingkatkan paket Anda pada menu Langganan.",
+            "Pemesanan sesi konsultasi 1-on-1 bersama Mentor tersedia khusus untuk pelanggan paket Rintis Max. Silakan tingkatkan paket Anda pada menu Langganan.",
         },
         { status: 403 }
       );

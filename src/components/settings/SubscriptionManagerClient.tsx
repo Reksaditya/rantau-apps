@@ -147,7 +147,7 @@ export function SubscriptionManagerClient({
                     0,
                     assistantLimit - assistantUsed
                   )} pesan.`
-                : "Tidak tersedia pada paket Rantau Starter."}
+                : "Tidak tersedia pada paket Rintis Starter."}
             </p>
           </div>
         </div>
@@ -169,8 +169,8 @@ export function SubscriptionManagerClient({
         </div>
       </section>
 
-      {/* Kartu Pilihan Paket */}
-      <section className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+      {/* Kartu Pilihan Paket — Paket yang sedang aktif berubah menjadi hijau (#1B8366) dengan teks putih (#FFFFFF) */}
+      <section className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:items-stretch">
         {plans.map((plan) => {
           const isCurrent = plan.tier === activeTier;
           const isSwitching = switchingTier === plan.tier;
@@ -178,60 +178,106 @@ export function SubscriptionManagerClient({
           return (
             <div
               key={plan.tier}
-              className={`flex flex-col justify-between rounded-xl bg-[#FFFFFF] p-6 ${
+              className={`flex flex-col justify-between rounded-xl p-6 transition-colors ${
                 isCurrent
-                  ? "border-2 border-[#1B8366] bg-[#E8F4F0]/25"
-                  : "border border-[#E1E8E4]"
+                  ? "bg-[#1B8366] text-[#FFFFFF] border-2 border-[#125642]"
+                  : "border border-[#E1E8E4] bg-[#FFFFFF] text-[#172B25]"
               }`}
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between gap-2">
-                  <h3 className="font-heading text-lg font-bold text-[#172B25]">
+                  <h3
+                    className={`font-heading text-lg font-bold ${
+                      isCurrent ? "text-[#FFFFFF]" : "text-[#172B25]"
+                    }`}
+                  >
                     {plan.name}
                   </h3>
-                  {isCurrent ? (
-                    <Badge variant="completed">Paket Aktif</Badge>
-                  ) : plan.isPopular ? (
-                    <Badge variant="primary">Paling Populer</Badge>
-                  ) : null}
+                  <div className="flex items-center gap-1.5">
+                    {plan.isPopular && !isCurrent && (
+                      <span className="rounded-md border border-[#B7DCCF] bg-[#E8F4F0] px-2.5 py-1 text-xs font-semibold text-[#1B8366]">
+                        Paling Populer
+                      </span>
+                    )}
+                    {isCurrent && (
+                      <span className="rounded-md bg-[#FFFFFF] px-2.5 py-1 text-xs font-semibold text-[#1B8366]">
+                        Paket Aktif
+                      </span>
+                    )}
+                  </div>
                 </div>
 
-                <p className="text-xs sm:text-sm text-[#52645D]">
+                <p
+                  className={`text-xs sm:text-sm ${
+                    isCurrent ? "text-[#E8F4F0]" : "text-[#52645D]"
+                  }`}
+                >
                   {plan.tagline}
                 </p>
 
-                <div className="pt-2 border-t border-[#E1E8E4]">
-                  <span className="font-heading text-2xl font-bold text-[#172B25]">
+                <div
+                  className={`pt-2 border-t ${
+                    isCurrent ? "border-[#166B53]" : "border-[#E1E8E4]"
+                  }`}
+                >
+                  <span
+                    className={`font-heading text-2xl font-bold ${
+                      isCurrent ? "text-[#FFFFFF]" : "text-[#172B25]"
+                    }`}
+                  >
                     {plan.priceLabel}
                   </span>
-                  <span className="block text-xs text-[#718078] mt-0.5">
+                  <span
+                    className={`block text-xs mt-0.5 ${
+                      isCurrent ? "text-[#E8F4F0]" : "text-[#718078]"
+                    }`}
+                  >
                     {plan.priceNote}
                   </span>
                 </div>
 
-                <ul className="space-y-2.5 pt-2 text-xs sm:text-sm text-[#172B25]">
+                <ul
+                  className={`space-y-2.5 pt-2 text-xs sm:text-sm ${
+                    isCurrent ? "text-[#FFFFFF]" : "text-[#172B25]"
+                  }`}
+                >
                   {plan.features.map((feat) => (
                     <li key={feat} className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 shrink-0 text-[#1B8366] mt-0.5" />
+                      <CheckCircle2
+                        className={`h-4 w-4 shrink-0 mt-0.5 ${
+                          isCurrent ? "text-[#E8F4F0]" : "text-[#1B8366]"
+                        }`}
+                      />
                       <span>{feat}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-[#E1E8E4]">
-                <Button
-                  type="button"
-                  variant={isCurrent ? "secondary" : "primary"}
-                  disabled={isCurrent}
-                  isLoading={isSwitching}
-                  onClick={() => handleSwitchPlan(plan.tier)}
-                  className="w-full"
-                >
-                  {isCurrent
-                    ? "Sedang Digunakan"
-                    : `Aktifkan ${plan.name} (MVP)`}
-                </Button>
+              <div
+                className={`mt-6 pt-4 border-t ${
+                  isCurrent ? "border-[#166B53]" : "border-[#E1E8E4]"
+                }`}
+              >
+                {isCurrent ? (
+                  <button
+                    type="button"
+                    disabled
+                    className="w-full rounded-lg bg-[#FFFFFF] px-4 py-2.5 text-sm font-semibold text-[#1B8366] cursor-default"
+                  >
+                    Sedang Digunakan
+                  </button>
+                ) : (
+                  <Button
+                    type="button"
+                    variant="primary"
+                    isLoading={isSwitching}
+                    onClick={() => handleSwitchPlan(plan.tier)}
+                    className="w-full"
+                  >
+                    {`Aktifkan ${plan.name} (MVP)`}
+                  </Button>
+                )}
               </div>
             </div>
           );
@@ -240,4 +286,3 @@ export function SubscriptionManagerClient({
     </div>
   );
 }
-

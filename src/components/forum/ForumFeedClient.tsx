@@ -52,7 +52,7 @@ export function ForumFeedClient({
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="font-heading text-2xl sm:text-[30px] font-bold text-[#172B25]">
-            Forum Komunitas Rantau
+            Forum Komunitas Rintis
           </h1>
           <p className="mt-1 text-sm sm:text-base text-[#52645D]">
             Diskusi terstruktur antar perintis bisnis dan pelaku UMKM di
@@ -196,7 +196,7 @@ export function ForumFeedClient({
                     <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-[#E1E8E4] text-xs text-[#718078]">
                       <div className="flex items-center gap-2">
                         <span className="font-semibold text-[#172B25]">
-                          {post.author?.full_name || "Anggota Rantau"}
+                          {post.author?.full_name || "Anggota Rintis"}
                         </span>
                         <span>•</span>
                         <span>

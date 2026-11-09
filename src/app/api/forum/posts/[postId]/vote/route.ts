@@ -28,7 +28,7 @@ export async function POST(
       return NextResponse.json(
         {
           error:
-            "Fitur upvote tersedia pada paket Rantau Growth dan Rantau Max.",
+            "Fitur upvote tersedia pada paket Rintis Growth dan Rintis Max.",
         },
         { status: 403 }
       );

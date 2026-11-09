@@ -8,8 +8,8 @@ export default async function ProfileSettingsPage() {
   if (!isSupabaseConfigured) {
     return (
       <ProfileSettingsClient
-        initialFullName="Entrepreneur Rantau"
-        email="konfigurasi@rantau.id"
+        initialFullName="Entrepreneur Rintis"
+        email="konfigurasi@rintis.id"
         initialBusiness={null}
       />
     );

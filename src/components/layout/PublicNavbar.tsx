@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Compass } from "lucide-react";
+import { Compass, ArrowUpRight } from "lucide-react";
 
 interface PublicNavbarProps {
   isAuthenticated?: boolean;
@@ -13,14 +13,9 @@ export function PublicNavbar({ isAuthenticated = false }: PublicNavbarProps) {
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#1B8366] text-[#FFFFFF]">
             <Compass className="h-5 w-5" />
           </span>
-          <div className="flex flex-col">
-            <span className="font-heading text-lg font-bold leading-none text-[#172B25]">
-              Rantau
-            </span>
-            <span className="text-[11px] font-medium text-[#718078]">
-              Temukan arah, bangun usahamu
-            </span>
-          </div>
+          <span className="font-heading text-lg font-bold tracking-tight text-[#172B25]">
+            Rintis
+          </span>
         </Link>
 
         <nav
@@ -28,22 +23,22 @@ export function PublicNavbar({ isAuthenticated = false }: PublicNavbarProps) {
           className="hidden md:flex items-center gap-8 text-sm font-medium text-[#52645D]"
         >
           <Link
+            href="/#fitur"
+            className="transition-colors hover:text-[#172B25]"
+          >
+            Fitur
+          </Link>
+          <Link
             href="/#cara-kerja"
             className="transition-colors hover:text-[#172B25]"
           >
             Cara Kerja
           </Link>
           <Link
-            href="/#fitur"
-            className="transition-colors hover:text-[#172B25]"
-          >
-            Fitur Pendamping
-          </Link>
-          <Link
             href="/pricing"
             className="transition-colors hover:text-[#172B25]"
           >
-            Paket Langganan
+            Harga
           </Link>
         </nav>
 
@@ -51,9 +46,10 @@ export function PublicNavbar({ isAuthenticated = false }: PublicNavbarProps) {
           {isAuthenticated ? (
             <Link
               href="/dashboard"
-              className="inline-flex items-center justify-center rounded-lg bg-[#1B8366] px-4 py-2 text-sm font-medium text-[#FFFFFF] transition-colors hover:bg-[#166B53] active:bg-[#125642]"
+              className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#1B8366] px-4 py-2 text-sm font-medium text-[#FFFFFF] transition-colors hover:bg-[#166B53] active:bg-[#125642]"
             >
-              Buka Dashboard
+              <span>Dashboard</span>
+              <ArrowUpRight className="h-4 w-4" />
             </Link>
           ) : (
             <>
@@ -79,49 +75,43 @@ export function PublicNavbar({ isAuthenticated = false }: PublicNavbarProps) {
 
 export function PublicFooter() {
   return (
-    <footer className="border-t border-[#E1E8E4] bg-[#FFFFFF] py-12">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
-          <div>
-            <div className="flex items-center gap-2.5">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#1B8366] text-[#FFFFFF]">
-                <Compass className="h-4 w-4" />
+    <footer className="border-t border-[#E1E8E4] bg-[#FFFFFF]">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
+          <div className="flex items-center gap-2.5">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#1B8366] text-[#FFFFFF]">
+              <Compass className="h-4 w-4" />
+            </span>
+            <div>
+              <span className="font-heading text-base font-bold text-[#172B25]">
+                Rintis
               </span>
-              <span className="font-heading text-lg font-bold text-[#172B25]">
-                Rantau
-              </span>
+              <p className="text-xs text-[#718078]">
+                Temukan arah, bangun usahamu.
+              </p>
             </div>
-            <p className="mt-2 max-w-md text-sm text-[#52645D]">
-              Platform pendamping bisnis berbasis AI, diskusi komunitas, dan
-              konsultasi mentor untuk mengubah ide menjadi langkah nyata.
-            </p>
           </div>
 
-          <div className="flex flex-wrap gap-6 text-sm font-medium text-[#52645D]">
-            <Link href="/" className="hover:text-[#172B25]">
-              Beranda
+          <div className="flex flex-wrap items-center gap-6 text-sm text-[#52645D]">
+            <Link href="/#fitur" className="hover:text-[#172B25]">
+              Fitur
+            </Link>
+            <Link href="/#cara-kerja" className="hover:text-[#172B25]">
+              Cara Kerja
             </Link>
             <Link href="/pricing" className="hover:text-[#172B25]">
-              Harga & Paket
+              Harga
             </Link>
             <Link href="/login" className="hover:text-[#172B25]">
-              Masuk Akun
-            </Link>
-            <Link href="/register" className="hover:text-[#172B25]">
-              Daftar Gratis
+              Masuk
             </Link>
           </div>
         </div>
 
-        <div className="mt-8 border-t border-[#E1E8E4] pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs text-[#718078]">
-          <p>© {new Date().getFullYear()} Rantau. Hak cipta dilindungi.</p>
-          <p>
-            Dirancang untuk entrepreneur muda dan pelaku UMKM di seluruh
-            Indonesia.
-          </p>
+        <div className="mt-8 border-t border-[#E1E8E4] pt-6 text-xs text-[#718078]">
+          © {new Date().getFullYear()} Rintis. Hak cipta dilindungi.
         </div>
       </div>
     </footer>
   );
 }
-

@@ -71,7 +71,7 @@ export function RoadmapGeneratorForm({
   mode,
   remainingQuota = 2,
   dailyLimit = 2,
-  planName = "Rantau Starter",
+  planName = "Rintis Starter",
 }: RoadmapGeneratorFormProps) {
   const router = useRouter();
   const [step, setStep] = useState<1 | 2 | 3>(1);
@@ -303,7 +303,7 @@ export function RoadmapGeneratorForm({
           <div className="flex items-center gap-3">
             <span className="h-5 w-5 animate-spin rounded-full border-2 border-[#1B8366] border-t-transparent" />
             <h3 className="font-heading text-base font-bold text-[#172B25]">
-              AI Rantau sedang menyusun 12 analisis strategis & tahapan tugas...
+              AI Rintis sedang menyusun 12 analisis strategis & tahapan tugas...
             </h3>
           </div>
           <p className="text-xs sm:text-sm text-[#52645D]">
@@ -379,7 +379,7 @@ export function RoadmapGeneratorForm({
                   type="text"
                   value={businessName}
                   onChange={(e) => setBusinessName(e.target.value)}
-                  placeholder="Contoh: Kopi Rantau Literan / Jasa Cuci Sepatu Bersih"
+                  placeholder="Contoh: Kopi Rintis Literan / Jasa Cuci Sepatu Bersih"
                   className="mt-1.5 w-full rounded-lg border border-[#C8D4CE] bg-[#FFFFFF] px-3 py-2.5 text-sm text-[#172B25] placeholder:text-[#718078]"
                 />
                 <p className="mt-1 text-xs text-[#718078]">

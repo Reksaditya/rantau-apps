@@ -58,7 +58,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           error:
-            "Fitur AI Business Assistant tersedia khusus untuk pelanggan paket Rantau Growth dan Rantau Max. Silakan tingkatkan paket Anda.",
+            "Fitur AI Business Assistant tersedia khusus untuk pelanggan paket Rintis Growth dan Rintis Max. Silakan tingkatkan paket Anda.",
         },
         { status: 403 }
       );

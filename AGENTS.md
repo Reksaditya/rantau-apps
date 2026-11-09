@@ -1,10 +1,10 @@
 # AGENTS.md — Panduan Kerja & Arsitektur AI Coding Agent
 
-## Rantau — Full-Stack AI Business Companion
+## Rintis — Full-Stack AI Business Companion
 
 | Informasi | Keterangan |
 | --- | --- |
-| Nama proyek | Rantau |
+| Nama proyek | Rintis |
 | Tagline | Temukan arah, bangun usahamu. |
 | Tujuan dokumen | Panduan arsitektur, konvensi kode, keamanan, dan alur kerja untuk AI Coding Agent |
 | Stack utama | Next.js (App Router), TypeScript, Tailwind CSS, Supabase (PostgreSQL, Auth, RLS), Google Gemini API, Zod |
@@ -15,7 +15,7 @@
 
 ## 1. Project Overview & Peran Agent
 
-Anda bertugas sebagai **Senior Full-Stack Developer, Product Designer, UI/UX Designer, dan AI Engineer** untuk membangun aplikasi web **Rantau**.
+Anda bertugas sebagai **Senior Full-Stack Developer, Product Designer, UI/UX Designer, dan AI Engineer** untuk membangun aplikasi web **Rintis**.
 
 Prioritas utama Anda adalah membangun produk MVP *full-stack* yang benar-benar berfungsi, terhubung ke database PostgreSQL di Supabase, terintegrasi dengan Google Gemini API di sisi server, menerapkan pemeriksaan hak akses paket langganan (*entitlements*), serta mematuhi sistem desain pada `DESIGN.md` dan kebutuhan produk pada `PRD.md`.
 
@@ -47,7 +47,7 @@ Sebelum mengubah atau menambah file:
 Pertahankan struktur direktori yang bersih dan modular berikut (sesuaikan apabila repositori menggunakan root `app/` tanpa `src/`):
 
 ```text
-rantau/
+rintis/
 ├── PRD.md
 ├── AGENTS.md
 ├── DESIGN.md
@@ -183,7 +183,7 @@ rantau/
 
 ### 7.1 UI Component & Styling Conventions
 - Patuhi **100% palet warna HEX eksak** yang didefinisikan pada `DESIGN.md` (contoh: `#1B8366` untuk Primary, `#F8FAF9` untuk App Background, `#FFFFFF` untuk Surface, `#172B25` untuk Primary Text).
-- Jangan menggunakan kelas warna generik Tailwind seperti `bg-green-600`, `text-gray-500`, atau `bg-slate-50`. Gunakan nilai warna eksplisit atau CSS variables yang mengacu pada kode HEX resmi Rantau.
+- Jangan menggunakan kelas warna generik Tailwind seperti `bg-green-600`, `text-gray-500`, atau `bg-slate-50`. Gunakan nilai warna eksplisit atau CSS variables yang mengacu pada kode HEX resmi Rintis.
 - Setiap halaman dan komponen interaktif wajib menangani 4 kondisi tampilan: **Loading State** (Skeleton `#EEF2F0`), **Empty State**, **Error State** (`#FDECEC` / `#C62828`), dan **Success State** (`#E8F5EC` / `#18794E`).
 
 ### 7.2 Naming & TypeScript Standards

@@ -14,7 +14,7 @@ export default async function MentorsDirectoryPage() {
   const { isSupabaseConfigured } = getPublicEnv();
   let mentors: Mentor[] = [];
   let availabilities: MentorAvailability[] = [];
-  let planName = "Rantau Starter";
+  let planName = "Rintis Starter";
 
   if (isSupabaseConfigured) {
     const supabase = await createServerSupabaseClient();

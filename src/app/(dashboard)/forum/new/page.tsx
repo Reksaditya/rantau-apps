@@ -44,7 +44,7 @@ export default async function NewForumPostPage() {
           </h1>
           <p className="mt-1 text-sm text-[#52645D]">
             Bagikan pertanyaan atau pengalaman praktis bisnis Anda kepada
-            komunitas Rantau.
+            komunitas Rintis.
           </p>
         </div>
         <Link
@@ -58,8 +58,8 @@ export default async function NewForumPostPage() {
       {!canWrite ? (
         <AlertBanner
           variant="warning"
-          title="Akses Baca (Read-only) pada Paket Rantau Starter"
-          message="Untuk membuat topik diskusi baru dan memberi komentar di komunitas, silakan tingkatkan paket Anda ke Rantau Growth atau Rantau Max."
+          title="Akses Baca (Read-only) pada Paket Rintis Starter"
+          message="Untuk membuat topik diskusi baru dan memberi komentar di komunitas, silakan tingkatkan paket Anda ke Rintis Growth atau Rintis Max."
           actionHref="/settings/subscription"
           actionLabel="Upgrade Paket"
         />

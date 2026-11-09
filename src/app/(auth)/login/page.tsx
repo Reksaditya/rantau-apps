@@ -64,7 +64,7 @@ function LoginFormContent() {
     <div className="w-full max-w-md rounded-xl border border-[#E1E8E4] bg-[#FFFFFF] p-6 sm:p-8 space-y-6">
       <div className="space-y-2">
         <h1 className="font-heading text-2xl font-bold text-[#172B25]">
-          Masuk ke Ruang Kerja Rantau
+          Masuk ke Ruang Kerja Rintis
         </h1>
         <p className="text-sm text-[#52645D]">
           Lanjutkan eksekusi roadmap bisnis dan diskusi Anda.
@@ -131,7 +131,7 @@ function LoginFormContent() {
       </form>
 
       <p className="border-t border-[#E1E8E4] pt-4 text-center text-sm text-[#52645D]">
-        Belum memiliki akun Rantau?{" "}
+        Belum memiliki akun Rintis?{" "}
         <Link
           href="/register"
           className="font-semibold text-[#1B8366] hover:text-[#166B53]"
@@ -153,7 +153,7 @@ export default function LoginPage() {
           </span>
           <div>
             <span className="block font-heading text-lg font-bold leading-none text-[#172B25]">
-              Rantau
+              Rintis
             </span>
             <span className="text-[11px] font-medium text-[#718078]">
               Temukan arah, bangun usahamu
@@ -175,7 +175,7 @@ export default function LoginPage() {
       </main>
 
       <footer className="text-center text-xs text-[#718078]">
-        © {new Date().getFullYear()} Rantau — Pendamping Bisnis Berbasis AI
+        © {new Date().getFullYear()} Rintis — Pendamping Bisnis Berbasis AI
       </footer>
     </div>
   );

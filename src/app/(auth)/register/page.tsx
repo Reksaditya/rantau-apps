@@ -105,7 +105,7 @@ export default function RegisterPage() {
           </span>
           <div>
             <span className="block font-heading text-lg font-bold leading-none text-[#172B25]">
-              Rantau
+              Rintis
             </span>
             <span className="text-[11px] font-medium text-[#718078]">
               Temukan arah, bangun usahamu
@@ -121,7 +121,7 @@ export default function RegisterPage() {
               Mulai Perjalanan Usaha Anda
             </h1>
             <p className="text-sm text-[#52645D]">
-              Buat akun gratis (Rantau Starter) dan susun roadmap bisnis pertama
+              Buat akun gratis (Rintis Starter) dan susun roadmap bisnis pertama
               Anda dalam hitungan detik.
             </p>
           </div>
@@ -201,7 +201,7 @@ export default function RegisterPage() {
                 className="mt-1.5 w-full rounded-lg border border-[#C8D4CE] bg-[#FFFFFF] px-3 py-2.5 text-sm text-[#172B25] placeholder:text-[#718078]"
               />
               <p className="mt-1 text-xs text-[#718078]">
-                Akun baru otomatis mendapatkan paket Rantau Starter aktif.
+                Akun baru otomatis mendapatkan paket Rintis Starter aktif.
               </p>
             </div>
 
@@ -216,7 +216,7 @@ export default function RegisterPage() {
           </form>
 
           <p className="border-t border-[#E1E8E4] pt-4 text-center text-sm text-[#52645D]">
-            Sudah punya akun Rantau?{" "}
+            Sudah punya akun Rintis?{" "}
             <Link
               href="/login"
               className="font-semibold text-[#1B8366] hover:text-[#166B53]"
@@ -228,7 +228,7 @@ export default function RegisterPage() {
       </main>
 
       <footer className="text-center text-xs text-[#718078]">
-        © {new Date().getFullYear()} Rantau — Pendamping Bisnis Berbasis AI
+        © {new Date().getFullYear()} Rintis — Pendamping Bisnis Berbasis AI
       </footer>
     </div>
   );

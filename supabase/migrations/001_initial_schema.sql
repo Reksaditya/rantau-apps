@@ -1,5 +1,5 @@
 -- ============================================================================
--- RANTAU — INITIAL DATABASE SCHEMA, RLS POLICIES, RPC & SEED DATA
+-- RINTIS — INITIAL DATABASE SCHEMA, RLS POLICIES, RPC & SEED DATA
 -- Versi: 1.0 (Full-Stack MVP)
 -- Database: PostgreSQL (Supabase)
 -- ============================================================================

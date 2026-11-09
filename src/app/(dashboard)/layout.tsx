@@ -16,8 +16,8 @@ export default async function AuthenticatedDashboardLayout({
   if (!isSupabaseConfigured) {
     return (
       <DashboardShell
-        userFullName="Pengguna Rantau"
-        userEmail="konfigurasi@rantau.id"
+        userFullName="Pengguna Rintis"
+        userEmail="konfigurasi@rintis.id"
         planTier="starter"
       >
         <div className="mb-6">

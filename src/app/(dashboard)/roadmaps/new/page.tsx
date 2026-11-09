@@ -9,7 +9,7 @@ export default async function NewRoadmapPage() {
   let businessProfile: BusinessProfile | null = null;
   let remainingQuota = 2;
   let dailyLimit = 2;
-  let planName = "Rantau Starter";
+  let planName = "Rintis Starter";
 
   if (isSupabaseConfigured) {
     const supabase = await createServerSupabaseClient();
@@ -40,7 +40,7 @@ export default async function NewRoadmapPage() {
           Susun Roadmap Bisnis Berbasis AI
         </h1>
         <p className="mt-1 text-sm sm:text-base text-[#52645D]">
-          Sesuaikan parameter usaha di bawah ini. AI Rantau akan menghasilkan 12
+          Sesuaikan parameter usaha di bawah ini. AI Rintis akan menghasilkan 12
           komponen strategis beserta tahapan dan daftar tugas yang terukur.
         </p>
       </div>

@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Rantau — Temukan arah, bangun usahamu.",
+  title: "Rintis — Temukan arah, bangun usahamu.",
   description:
     "Platform pendamping bisnis berbasis AI yang membantu entrepreneur memulai dan mengembangkan usaha melalui roadmap terstruktur, asisten AI kontekstual, komunitas, dan konsultasi mentor.",
 };

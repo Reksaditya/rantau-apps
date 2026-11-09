@@ -9,7 +9,7 @@ export default async function OnboardingPage() {
   let businessProfile: BusinessProfile | null = null;
   let remainingQuota = 2;
   let dailyLimit = 2;
-  let planName = "Rantau Starter";
+  let planName = "Rintis Starter";
 
   if (isSupabaseConfigured) {
     const supabase = await createServerSupabaseClient();
@@ -41,7 +41,7 @@ export default async function OnboardingPage() {
         </h1>
         <p className="mt-1 text-sm sm:text-base text-[#52645D]">
           Lengkapi informasi kondisi usaha Anda. Data ini menjadi dasar bagi AI
-          Rantau dalam menyusun roadmap dan menjawab konsultasi harian.
+          Rintis dalam menyusun roadmap dan menjawab konsultasi harian.
         </p>
       </div>
 

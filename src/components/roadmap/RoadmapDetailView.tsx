@@ -316,8 +316,8 @@ export function RoadmapDetailView({
                         <Badge variant="primary">Terkunci di Starter</Badge>
                       </div>
                       <p className="mt-1 text-sm text-[#52645D]">
-                        Paket Rantau Starter menampilkan 3 tahap awal secara
-                        penuh. Tingkatkan ke paket Rantau Growth atau Max untuk
+                        Paket Rintis Starter menampilkan 3 tahap awal secara
+                        penuh. Tingkatkan ke paket Rintis Growth atau Max untuk
                         membuka rincian tugas pada Tahap {stage.stage_order}{" "}
                         beserta seluruh analisis mendalam.
                       </p>
@@ -512,8 +512,8 @@ export function RoadmapDetailView({
                       {sec.title}
                     </h3>
                     <p className="text-sm text-[#52645D]">
-                      Bagian analisis mendalam ini terkunci pada paket Rantau
-                      Starter. Beralih ke Rantau Growth atau Max untuk membaca
+                      Bagian analisis mendalam ini terkunci pada paket Rintis
+                      Starter. Beralih ke Rintis Growth atau Max untuk membaca
                       seluruh 12 komponen strategis secara lengkap.
                     </p>
                   </div>

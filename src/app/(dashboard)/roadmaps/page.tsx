@@ -57,7 +57,7 @@ export default async function RoadmapsListPage() {
       {roadmaps.length === 0 ? (
         <EmptyState
           title="Belum Ada Dokumen Roadmap"
-          description="Mulai petakan langkah bisnis Anda dari validasi pasar hingga strategi operasional melalui generator AI Rantau."
+          description="Mulai petakan langkah bisnis Anda dari validasi pasar hingga strategi operasional melalui generator AI Rintis."
           actionLabel="Susun Roadmap Pertama"
           actionHref="/roadmaps/new"
         />

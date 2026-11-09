@@ -1,10 +1,34 @@
 import Link from "next/link";
-import { CheckCircle2, Minus } from "lucide-react";
+import { CheckCircle2, Minus, Sparkles } from "lucide-react";
 import { PublicNavbar, PublicFooter } from "@/components/layout/PublicNavbar";
 import { Badge } from "@/components/ui/Badge";
+import { FaqAccordionGrid, type FaqItem } from "@/components/ui/FaqAccordionGrid";
 import { PLAN_ENTITLEMENTS } from "@/lib/subscription/entitlements";
 import { getPublicEnv } from "@/lib/env";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+
+const PRICING_FAQS: FaqItem[] = [
+  {
+    question: "Bagaimana cara mencoba paket Rintis Growth atau Rintis Max di tahap MVP?",
+    answer:
+      "Setelah masuk ke akun Anda, buka menu Langganan & Kuota pada sidebar. Anda dapat langsung memilih dan mengaktifkan paket Starter, Growth, atau Max tanpa kartu kredit untuk menguji kuota server.",
+  },
+  {
+    question: "Apa yang terjadi pada tahap roadmap ke-4 dan seterusnya jika saya menggunakan Starter?",
+    answer:
+      "Pada paket Rintis Starter, ringkasan bisnis dan 3 tahapan implementasi awal terbuka penuh. Tahap ke-4 dan seterusnya disimpan aman di database dan langsung terbuka begitu Anda beralih ke paket Growth atau Max.",
+  },
+  {
+    question: "Apakah kuota harian yang tidak terpakai akan diakumulasikan ke hari berikutnya?",
+    answer:
+      "Kuota bersifat harian dan di-reset otomatis setiap pukul 00:00 WIB (Asia/Jakarta) kembali ke batas maksimal paket Anda.",
+  },
+  {
+    question: "Apakah pengguna Starter tetap bisa membaca diskusi di Forum Komunitas?",
+    answer:
+      "Ya, pengguna Rintis Starter memiliki akses baca (Read-only) penuh terhadap seluruh topik dan komentar di Forum Komunitas serta dapat melihat profil mentor di Direktori Mentor.",
+  },
+];
 
 export default async function PricingPage() {
   let isAuthenticated = false;
@@ -84,95 +108,136 @@ export default async function PricingPage() {
       <PublicNavbar isAuthenticated={isAuthenticated} />
 
       <main className="flex-1 py-12 lg:py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-14">
-          <div className="max-w-3xl space-y-3">
-            <Badge variant="primary">Paket Langganan Rantau</Badge>
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-16">
+          {/* Header Section */}
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <Badge variant="primary">Paket Langganan & Hak Akses</Badge>
             <h1 className="font-heading text-3xl sm:text-4xl font-bold text-[#172B25]">
-              Investasi terukur untuk setiap tahap perjalanan usaha Anda
+              Pilih Paket Pendamping Sesuai Fase Usaha Anda
             </h1>
             <p className="text-base text-[#52645D]">
-              Mulai gratis dengan Rantau Starter untuk memvalidasi ide awal,
-              atau beralih ke Growth dan Max untuk membuka seluruh analisis 12
-              komponen, AI Assistant harian, dan sesi konsultasi mentor.
+              Mulai gratis dengan Rintis Starter untuk memvalidasi ide awal,
+              atau beralih ke Growth dan Max untuk membuka seluruh 12 komponen
+              strategis, AI Assistant harian, dan sesi konsultasi mentor.
             </p>
             <p className="text-xs font-medium text-[#718078]">
-              Keterangan MVP: Harga tercantum merupakan placeholder simulasi
-              MVP. Anda dapat mencoba berpindah paket secara langsung di menu
-              Langganan setelah masuk akun tanpa biaya kartu kredit.
+              Keterangan jujur MVP: Harga di bawah merupakan placeholder
+              simulasi MVP dan belum menarik biaya pembayaran online.
             </p>
           </div>
 
-          {/* 3 Kartu Paket Sejajar */}
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-            {plans.map((plan) => (
-              <div
-                key={plan.tier}
-                className={`flex flex-col justify-between rounded-xl bg-[#FFFFFF] p-6 ${
-                  plan.isPopular
-                    ? "border-2 border-[#1B8366]"
-                    : "border border-[#E1E8E4]"
-                }`}
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between gap-2">
-                    <h2 className="font-heading text-xl font-bold text-[#172B25]">
-                      {plan.name}
-                    </h2>
-                    {plan.isPopular && (
-                      <Badge variant="primary">Paling Populer</Badge>
-                    )}
+          {/* 3 Kartu Paket Sejajar (Center Card Filled #1B8366 per Reference Image 2 & DESIGN.md) */}
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:items-stretch">
+            {plans.map((plan) => {
+              const isFeatured = Boolean(plan.isPopular);
+              return (
+                <div
+                  key={plan.tier}
+                  className={`flex flex-col justify-between rounded-xl p-6 sm:p-7 ${
+                    isFeatured
+                      ? "bg-[#1B8366] text-[#FFFFFF] border-2 border-[#125642]"
+                      : "bg-[#FFFFFF] text-[#172B25] border border-[#E1E8E4]"
+                  }`}
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between gap-2">
+                      <h2
+                        className={`font-heading text-xl font-bold ${
+                          isFeatured ? "text-[#FFFFFF]" : "text-[#172B25]"
+                        }`}
+                      >
+                        {plan.name}
+                      </h2>
+                      {isFeatured && (
+                        <span className="rounded-md bg-[#FFFFFF] px-2.5 py-1 text-xs font-semibold text-[#1B8366]">
+                          Paling Populer
+                        </span>
+                      )}
+                    </div>
+                    <p
+                      className={`text-sm ${
+                        isFeatured ? "text-[#E8F4F0]" : "text-[#52645D]"
+                      }`}
+                    >
+                      {plan.tagline}
+                    </p>
+
+                    <div
+                      className={`pt-3 border-t ${
+                        isFeatured ? "border-[#166B53]" : "border-[#E1E8E4]"
+                      }`}
+                    >
+                      <span
+                        className={`font-heading text-3xl font-bold ${
+                          isFeatured ? "text-[#FFFFFF]" : "text-[#172B25]"
+                        }`}
+                      >
+                        {plan.priceLabel}
+                      </span>
+                      <span
+                        className={`block text-xs mt-1 ${
+                          isFeatured ? "text-[#E8F4F0]" : "text-[#718078]"
+                        }`}
+                      >
+                        {plan.priceNote}
+                      </span>
+                    </div>
+
+                    <ul className="space-y-3 pt-2 text-sm">
+                      {plan.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-2.5">
+                          <CheckCircle2
+                            className={`h-4 w-4 shrink-0 mt-0.5 ${
+                              isFeatured ? "text-[#E8F4F0]" : "text-[#1B8366]"
+                            }`}
+                          />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <p className="text-sm text-[#52645D]">{plan.tagline}</p>
 
-                  <div className="pt-3 border-t border-[#E1E8E4]">
-                    <span className="font-heading text-3xl font-bold text-[#172B25]">
-                      {plan.priceLabel}
-                    </span>
-                    <span className="block text-xs text-[#718078] mt-1">
-                      {plan.priceNote}
-                    </span>
-                  </div>
-
-                  <ul className="space-y-3 pt-2 text-sm text-[#172B25]">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="h-4 w-4 shrink-0 text-[#1B8366] mt-0.5" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mt-8 pt-4 border-t border-[#E1E8E4]">
-                  <Link
-                    href={
-                      isAuthenticated ? "/settings/subscription" : "/register"
-                    }
-                    className={`flex w-full items-center justify-center rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
-                      plan.isPopular
-                        ? "bg-[#1B8366] text-[#FFFFFF] hover:bg-[#166B53]"
-                        : "border border-[#C8D4CE] bg-[#FFFFFF] text-[#172B25] hover:bg-[#F8FAF9]"
+                  <div
+                    className={`mt-8 pt-4 border-t ${
+                      isFeatured ? "border-[#166B53]" : "border-[#E1E8E4]"
                     }`}
                   >
-                    {isAuthenticated
-                      ? `Pilih ${plan.name}`
-                      : `Daftar ${plan.name}`}
-                  </Link>
+                    <Link
+                      href={
+                        isAuthenticated ? "/settings/subscription" : "/register"
+                      }
+                      className={`flex w-full items-center justify-center rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors ${
+                        isFeatured
+                          ? "bg-[#FFFFFF] text-[#1B8366] hover:bg-[#E8F4F0]"
+                          : "border border-[#C8D4CE] bg-[#FFFFFF] text-[#172B25] hover:bg-[#F8FAF9]"
+                      }`}
+                    >
+                      {isAuthenticated
+                        ? `Pilih ${plan.name}`
+                        : `Daftar ${plan.name}`}
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Tabel Perbandingan Hak Akses (Entitlement Matrix) */}
           <section className="rounded-xl border border-[#E1E8E4] bg-[#FFFFFF] overflow-hidden">
-            <div className="border-b border-[#E1E8E4] p-6">
-              <h2 className="font-heading text-xl font-bold text-[#172B25]">
-                Perbandingan Detail Fitur & Kuota Harian
-              </h2>
-              <p className="mt-1 text-sm text-[#52645D]">
-                Seluruh kuota harian di-reset otomatis setiap pukul 00:00 WIB
-                (Asia/Jakarta).
-              </p>
+            <div className="border-b border-[#E1E8E4] bg-[#172B25] p-6 text-[#FFFFFF] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div>
+                <h2 className="font-heading text-xl font-bold text-[#FFFFFF]">
+                  Matriks Perbandingan Hak Akses & Kuota Harian
+                </h2>
+                <p className="mt-1 text-xs sm:text-sm text-[#E8F4F0]">
+                  Seluruh kuota harian ditegakkan di sisi server dan di-reset
+                  otomatis pukul 00:00 WIB.
+                </p>
+              </div>
+              <span className="inline-flex items-center gap-1.5 rounded-md bg-[#125642] border border-[#1B8366] px-3 py-1.5 text-xs font-medium text-[#E8F4F0] self-start sm:self-auto">
+                <Sparkles className="h-3.5 w-3.5 text-[#B7DCCF]" />
+                <span>Zona Waktu Asia/Jakarta</span>
+              </span>
             </div>
 
             <div className="overflow-x-auto">
@@ -180,11 +245,11 @@ export default async function PricingPage() {
                 <thead>
                   <tr className="border-b border-[#E1E8E4] bg-[#F8FAF9] text-xs font-semibold text-[#52645D]">
                     <th className="p-4 min-w-[220px]">Atribut / Hak Akses</th>
-                    <th className="p-4 min-w-[180px]">Rantau Starter</th>
+                    <th className="p-4 min-w-[180px]">Rintis Starter</th>
                     <th className="p-4 min-w-[200px] text-[#1B8366]">
-                      Rantau Growth
+                      Rintis Growth
                     </th>
-                    <th className="p-4 min-w-[200px]">Rantau Max</th>
+                    <th className="p-4 min-w-[200px]">Rintis Max</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#E1E8E4] text-sm">
@@ -219,33 +284,18 @@ export default async function PricingPage() {
             </div>
           </section>
 
-          {/* FAQ Singkat */}
-          <section className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div className="rounded-xl border border-[#E1E8E4] bg-[#FFFFFF] p-6 space-y-2">
-              <h3 className="font-heading text-base font-bold text-[#172B25]">
-                Apakah roadmap lama saya hilang jika saya membuat roadmap baru?
-              </h3>
+          {/* 2-Column FAQ Accordion */}
+          <section className="space-y-6">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <h2 className="font-heading text-2xl font-bold text-[#172B25]">
+                Pertanyaan Seputar Paket & Kuota
+              </h2>
               <p className="text-sm text-[#52645D]">
-                Tidak. Setiap kali Anda menekan Generate Roadmap, sistem
-                menyimpan dokumen tersebut sebagai versi baru (Versi 1, Versi 2,
-                dst.) sehingga riwayat rencana dan progres tugas lama tetap
-                tersimpan utuh.
+                Penjelasan mengenai mekanisme simulasi paket MVP dan aturan
+                kuota harian.
               </p>
             </div>
-            <div className="rounded-xl border border-[#E1E8E4] bg-[#FFFFFF] p-6 space-y-2">
-              <h3 className="font-heading text-base font-bold text-[#172B25]">
-                Bagaimana cara menguji paket Growth atau Max pada tahap MVP ini?
-              </h3>
-              <p className="text-sm text-[#52645D]">
-                Setelah masuk ke akun Anda, buka menu{" "}
-                <strong className="font-semibold text-[#172B25]">
-                  Langganan & Kuota
-                </strong>{" "}
-                di panel samping. Anda dapat beralih antar paket Starter,
-                Growth, dan Max secara instan untuk menguji seluruh fitur dan
-                validasi kuota server.
-              </p>
-            </div>
+            <FaqAccordionGrid items={PRICING_FAQS} />
           </section>
         </div>
       </main>
@@ -254,4 +304,3 @@ export default async function PricingPage() {
     </div>
   );
 }
-

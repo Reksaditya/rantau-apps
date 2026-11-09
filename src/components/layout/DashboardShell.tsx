@@ -171,7 +171,7 @@ export function DashboardShell({
             <Compass className="h-4 w-4" />
           </span>
           <span className="font-heading text-base font-bold text-[#172B25]">
-            Rantau
+            Rintis
           </span>
         </Link>
 
@@ -211,7 +211,7 @@ export function DashboardShell({
                   </span>
                   <div>
                     <span className="block font-heading text-base font-bold leading-none text-[#172B25]">
-                      Rantau
+                      Rintis
                     </span>
                     <span className="text-[11px] text-[#718078]">
                       Temukan arah, bangun usahamu
@@ -275,7 +275,7 @@ export function DashboardShell({
             </span>
             <div>
               <span className="block font-heading text-lg font-bold leading-none text-[#172B25]">
-                Rantau
+                Rintis
               </span>
               <span className="text-[11px] font-medium text-[#718078]">
                 Temukan arah, bangun usahamu

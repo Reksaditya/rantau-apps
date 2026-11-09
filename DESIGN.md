@@ -1,10 +1,10 @@
-# DESIGN.md — Design System & Panduan UI/UX Rantau
+# DESIGN.md — Design System & Panduan UI/UX Rintis
 
-## Rantau — Temukan arah, bangun usahamu.
+## Rintis — Temukan arah, bangun usahamu.
 
 | Informasi | Keterangan |
 | --- | --- |
-| Nama produk | Rantau |
+| Nama produk | Rintis |
 | Karakter visual | Simple, minimal, modern, clean, professional SaaS |
 | Heading Font | DM Sans (Bold / 700) |
 | Body & UI Font | Inter (Regular 400, Medium 500, SemiBold 600) |
@@ -16,7 +16,7 @@
 ## 1. Brand Identity & Design Principles
 
 ### 1.1 Kepribadian Merek (Brand Personality)
-Rantau hadir sebagai pendamping bisnis yang:
+Rintis hadir sebagai pendamping bisnis yang:
 - **Mendukung Entrepreneur Pemula:** Ramah dan memandu langkah demi langkah tanpa istilah teknis yang mengintimidasi.
 - **Profesional namun Tidak Kaku:** Tata letak bersih layaknya produk produktivitas SaaS modern, namun tetap hangat dan relevan bagi pelaku UMKM maupun anak muda.
 - **Optimistis dan Jujur:** Memberikan semangat membangun usaha tanpa menjanjikan kesuksesan instan yang berlebihan.
@@ -141,7 +141,7 @@ Gunakan kelipatan konsisten berbasis `4px`:
 - Kartu interaktif yang dapat dipilih (seperti pilihan kondisi bisnis pada form roadmap atau slot jadwal mentor) menggunakan border `2px solid #1B8366` dan latar `#E8F4F0` saat berstatus *selected*.
 
 ### 5.4 Navigation (Public & App Shell)
-- **Public Navbar:** Tinggi `64px`, latar `#FFFFFF`, border bawah `#E1E8E4`, logo Rantau di kiri, tautan navigasi di tengah (`#52645D`, hover `#172B25`), serta tombol **Masuk** dan **Mulai Gratis** di kanan.
+- **Public Navbar:** Tinggi `64px`, latar `#FFFFFF`, border bawah `#E1E8E4`, logo Rintis di kiri, tautan navigasi di tengah (`#52645D`, hover `#172B25`), serta tombol **Masuk** dan **Mulai Gratis** di kanan.
 - **Dashboard Sidebar (Desktop):** Lebar tetap `260px`, latar `#FFFFFF`, border kanan `#E1E8E4`. Item navigasi aktif menggunakan latar `#E8F4F0`, teks `#1B8366` SemiBold, dan indikator garis vertikal `#1B8366`.
 - **Mobile Navigation:** Topbar ringkas dengan tombol pembuka menu samping (*drawer*) berlatar `#FFFFFF` dan overlay `#172B2566`.
 
@@ -165,7 +165,7 @@ Gunakan kelipatan konsisten berbasis `4px`:
 ## 6. Panduan Desain Halaman & Fitur Khusus
 
 ### 6.1 Dashboard Layout
-- Bagian atas menampilkan sapaan pengguna, badge paket langganan aktif (`Rantau Starter` / `Growth` / `Max`), dan ringkasan sisa kuota harian dalam kartu metrik ringkas.
+- Bagian atas menampilkan sapaan pengguna, badge paket langganan aktif (`Rintis Starter` / `Growth` / `Max`), dan ringkasan sisa kuota harian dalam kartu metrik ringkas.
 - Bagian utama menampilkan kartu **Roadmap Aktif Terakhir** lengkap dengan bilah progres `#1B8366` dan 3 tugas prioritas berikutnya agar pengguna dapat langsung melanjutkan pekerjaan.
 
 ### 6.2 Roadmap Visualization & Stepper
@@ -175,7 +175,7 @@ Gunakan kelipatan konsisten berbasis `4px`:
 
 ### 6.3 Pricing Cards
 - Menampilkan 3 kartu sejajar pada layar desktop (`Starter`, `Growth`, `Max`).
-- Kartu **Rantau Growth** ditonjolkan dengan border `2px solid #1B8366` dan badge `"Paling Populer"` (`#E8F4F0` / `#1B8366`).
+- Kartu **Rintis Growth** ditonjolkan dengan border `2px solid #1B8366` dan badge `"Paling Populer"` (`#E8F4F0` / `#1B8366`).
 - Menyertakan keterangan jujur berwarna `#718078` bahwa harga yang tercantum adalah placeholder MVP dan belum menarik biaya pembayaran online.
 
 ### 6.4 Community Forum Components

@@ -43,7 +43,7 @@ export function ForumDetailClient({
   async function handleToggleVote() {
     if (!entitlement.canWriteForum) {
       setErrorMsg(
-        "Fitur upvote tersedia pada paket Rantau Growth dan Rantau Max."
+        "Fitur upvote tersedia pada paket Rintis Growth dan Rintis Max."
       );
       return;
     }
@@ -196,7 +196,7 @@ export function ForumDetailClient({
           </h1>
           <div className="flex items-center gap-2 text-xs text-[#718078]">
             <span className="font-semibold text-[#172B25]">
-              {post.author?.full_name || "Anggota Rantau"}
+              {post.author?.full_name || "Anggota Rintis"}
             </span>
             <span>•</span>
             <span>
@@ -278,7 +278,7 @@ export function ForumDetailClient({
             <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#172B25]">
               <Lock className="h-4 w-4 text-[#1B8366] shrink-0" />
               <span>
-                Paket Rantau Starter memiliki akses baca (Read-only). Upgrade ke
+                Paket Rintis Starter memiliki akses baca (Read-only). Upgrade ke
                 Growth atau Max untuk ikut berkomentar.
               </span>
             </div>
@@ -304,7 +304,7 @@ export function ForumDetailClient({
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2 text-xs text-[#718078]">
                       <span className="font-semibold text-[#172B25]">
-                        {comment.author?.full_name || "Anggota Rantau"}
+                        {comment.author?.full_name || "Anggota Rintis"}
                       </span>
                       <span>•</span>
                       <span>
